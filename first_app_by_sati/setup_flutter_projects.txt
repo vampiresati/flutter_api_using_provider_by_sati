@@ -1,0 +1,3 @@
+1.flutter create first_app_by_sati
+2.cd first_app_by_sati
+
