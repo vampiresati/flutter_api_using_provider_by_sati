@@ -1,5 +1,7 @@
 import 'package:first_app_by_sati/home_page.dart';
+import 'package:first_app_by_sati/provider/todo_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,12 +9,16 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(),
+    return ChangeNotifierProvider(
+      create: (context) => TodoProvider(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: const HomePage(),
+      ),
     );
   }
 }
